@@ -15,4 +15,4 @@ require_once('open_file.php');
 require_once('how_long_func.php');
 
 $file = open_file($argv[1]);
-how_long_func($file);
+print how_long_func($file);
