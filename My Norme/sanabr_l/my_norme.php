@@ -9,12 +9,39 @@
 // Last update Mon Jan  8 11:36:18 2018 SANABRIA Luis-Edouard
 //
 
-//function which opens the file. Variable is a string returned by the function
+//function to open the file. Returns an array, each element being a line of the file
+function open_file_arr($file_to_open) {
+  $file = @file($file_to_open);
+
+  if ($file == FALSE) {
+    return "Oops ! Something wrong happened : no file found.\n";
+  } else {
+    return $file;
+  }
+}
+
+//function to open the file. Returns a string
+function open_file_str($file_to_open) {
+  $file = @file_get_contents($file_to_open);
+
+  if ($file == FALSE) {
+    return "Oops ! Something wrong happened : no file found.\n";
+  } else {
+    return $file;
+  }
+}
+
 //function longer than 25 lines
+require_once('how_long_func.php');
+
 //wrong header
 //number of function per file
+require_once('how_many_func.php');
+
 //space at the end of a line
 //missing space after keyword
+require_once('space_after_keyword.php');
+
 //carriot return twice
 //line longer than 80 characters
 //more than 4 parameters for a function
@@ -26,12 +53,10 @@
 //carriot return when variables defined
 //display colors for better readability
 
-require_once('open_file.php');
-require_once('how_long_func.php');
-require_once('how_many_func.php');
-require_once('space_after_keyword.php');
 
-$file = open_file($argv[1]);
-print how_long_func($file);
-print how_many_func($file);
-space_after_keyword($file);
+$file_arr = open_file_arr($argv[1]);
+$file_str = open_file_str($argv[1]);
+
+print how_long_func($file_arr);
+print how_many_func($file_arr);
+print space_after_keyword($file_str);
