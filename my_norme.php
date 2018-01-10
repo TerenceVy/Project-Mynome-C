@@ -10,25 +10,25 @@
 //
 
 //function to open the file. Returns an array, each element being a line of the file
-function open_file_arr($file_to_open) {
+function open_file_arr($file_to_open)
+{
   $file = @file($file_to_open);
 
-  if ($file == FALSE) {
+  if ($file == FALSE)
     return "Oops ! Something wrong happened : no file found.\n";
-  } else {
+  else
     return $file;
-  }
 }
 
 //function to open the file. Returns a string
-function open_file_str($file_to_open) {
+function open_file_str($file_to_open)
+{
   $file = @file_get_contents($file_to_open);
 
-  if ($file == FALSE) {
+  if ($file == FALSE)
     return "Oops ! Something wrong happened : no file found.\n";
-  } else {
+  else
     return $file;
-  }
 }
 
 $file_arr = open_file_arr($argv[1]);
@@ -36,22 +36,22 @@ $file_str = open_file_str($argv[1]);
 
 //function longer than 25 lines
 require_once('how_long_func.php');
-print how_long_func($file_arr);
+print "Nombre de ligne en trop pour une fonction => ".how_long_func($file_arr)."\n";
 
 //wrong header
 //number of function per file
 require_once('how_many_func.php');
-print how_many_func($file_arr);
+print "Nombre fonction en trop => ".how_many_func($file_arr)."\n";
 
 //space at the end of a line
 //missing space after keyword
 require_once('space_after_keyword.php');
-print space_after_keyword($file_str);
+print "Espace apres mot cle => ".space_after_keyword($file_str)."\n";
 
 //carriot return twice
 //line longer than 80 characters
 require_once('beyond_eighty.php');
-print beyond_eighty($file_arr);
+print "Plus de 80 caracteres sur une ligne => ".beyond_eighty($file_arr)."\n";
 
 //more than 4 parameters for a function
 //where includes appear
