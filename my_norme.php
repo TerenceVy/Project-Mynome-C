@@ -247,6 +247,6 @@ for ($i = 0; $i < count($files); $i++)
 		define_in_source_file($line);
 		two_return_func($line);
 		print $compt_faute."\n";
-		$compt_faut = 0;
+		$compt_faute = 0;
 	}
 }
