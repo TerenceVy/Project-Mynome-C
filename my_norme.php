@@ -55,6 +55,9 @@ print "Plus de 80 caracteres sur une ligne => ".beyond_eighty($file_arr)."\n";
 
 //more than 4 parameters for a function
 //where includes appear
+require_once('order_incl.php');
+print "Des includes mal places => ".order_incl($file_arr);
+
 //declare and define a variable on the same line
 //Define in .c file
 //carriot return between two functions
