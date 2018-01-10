@@ -33,6 +33,7 @@ function open_file_str($file_to_open)
 
 $file_arr = open_file_arr($argv[1]);
 $file_str = open_file_str($argv[1]);
+var_dump($file_str);
 
 //function longer than 25 lines
 require_once('how_long_func.php');
