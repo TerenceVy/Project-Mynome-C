@@ -56,11 +56,17 @@ print "Plus de 80 caracteres sur une ligne => ".beyond_eighty($file_arr)."\n";
 //more than 4 parameters for a function
 //where includes appear
 require_once('order_incl.php');
-print "Des includes mal places => ".order_incl($file_arr);
+print "Des includes mal places => ".order_incl($file_arr)."\n";
 
 //declare and define a variable on the same line
-//Define in .c file
+//Define in source file
+require_once('define_in_source.php');
+print "Des defines dans le code source => ".define_in_source_file($file_arr)."\n";
+
 //carriot return between two functions
 //tabulation when a variable is declared
+require_once("tab_in_declaration.php");
+print "Manque de tabulation dans les variables => ".tab_in_declaration($file_str)."\n";
+
 //carriot return when variables defined
 //display colors for better readability
