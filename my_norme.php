@@ -114,7 +114,7 @@ function space_after_keyword($file)
   return $mistake;
 }
 
-//Carriot return twice
+//double return twice
 function double_return($line)
 {
 	global $compt_faute;
