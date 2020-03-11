@@ -1,0 +1,1 @@
+Give to this script your file.c and it will check if your file is in the ETNA's norm
